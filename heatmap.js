@@ -192,10 +192,11 @@ proto.update = function (options) {
   var bounds = this.bounds
 
   /* LO 29-03-2020: To get squares to centre on data values */
+  // LO 06-07-2020: Fixed centring -- was shifted the wrong way
   /* var lox = bounds[0] = x[0] */
   /* var loy = bounds[1] = y[0] */
-  var lox = bounds[0] = x[0] - (x[1] - x[0])/2 /* starting x value */
-  var loy = bounds[1] = y[0] - (y[1] - y[0])/2 /* starting y value */
+  var lox = bounds[0] = x[0] + (x[1] - x[0])/2 /* starting x value */
+  var loy = bounds[1] = y[0] + (y[1] - y[0])/2 /* starting y value */
 
   /* LO 29-03-2020: Bounds needs to add half a square on each end */
   /* var hix = bounds[2] = x[x.length - 1] */
